@@ -1,0 +1,19 @@
+# Title
+FREE EXCHANGE
+Often helpful, sometimes bad, always dangerous
+How good is OpenAI's Deep Research at economics?
+# Summery 
+
+Using Deep research as an assistant has three important issues: data creativity, tyranny of the majority, and intellectual shortcuts.
+Its is best used when asking straight forward questions.
+
+# Evidance
+
+"The obvious conclusions first. Deep Research is unable to con-
+duct primary research, from organising polls in Peru to getting a
+feel for the body language of a chief executive Whose Company
+you might short."
+
+# Citation 
+
+The Econimst FREE EXCHANGE Often helpful, sometimes bad, always dangerous How good is OpenAI's Deep Research at economics?
