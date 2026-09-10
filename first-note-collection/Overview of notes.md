@@ -24,4 +24,6 @@ Figuring out the best ways to push the AI and verify its work is still an open q
 
 # AI Disclosure
 
-I used AI to create titles, pick out descriptive keywords from the quotes and sources, and to make sure that my summeries are on point. Using AI for these organizing tasks helped me group my notes objectively.
+I used Claude (Anthropic) while assembling this collection. I selected all ten quotations and wrote all ten commentary sections myself; the AI did not choose my sources or decide what was worth quoting.
+
+I used it for four things. It generated the keywords for notes 1 through 7, and it built the keyword frequency table, where it also pointed out that every one of my keywords appears exactly once rather than forming the mixed distribution this assignment expects. It checked my three sources and found that two of my citations were wrong: my Economist entry used a headline that does not match the published article, and my New York Times entry was missing both authors. It supplied the corrected Chicago citations, located the quotations inside the Mollick and Times articles. Finally, it handled formatting and caught transcription errors in my quotations, including a capitalisation error in note 1 and doubled quotation marks in note 9.
