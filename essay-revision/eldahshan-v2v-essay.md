@@ -66,6 +66,7 @@ This oversight might be due to the fact that AUTOCRYPT sells V2X security produc
 
 The problem is that the pseudonym certificates are deliberately unlinkable, so identifying a misbehaving vehicle from one reported certificate is not enough to revoke the rest of the batch it holds.
 @brechtSecurityCredentialManagement2018 identify efficient revocation as \"one of the main challenges\" given the number of pseudonym certificates each vehicle holds.
+This challenge is not coincidental, because the same unlinkability that protects drivers' privacy also leaves revocation in the hands of the Misbehavior Authority.
 
 A vehicle with valid certificates broadcasts a message containing false information.
 Because V2X relies on vehicles accepting data from any sender holding a valid certificate, the system is vulnerable to attacks originating from users inside it.
