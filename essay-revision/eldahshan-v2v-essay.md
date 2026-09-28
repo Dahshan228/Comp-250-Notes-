@@ -19,13 +19,14 @@ abstract: |
   against their own sensors, though a careful attacker can evade even those checks.
 ---
 
-A driver can see an open road that has buildings blocking their view of the left and right of the intersection.
+A driver approaches an intersection where buildings block the view to the left and right.
 They cannot see if a car is coming from either direction.
 A warning from their vehicle tells them to brake because a car is approaching from the right and is not slowing down.
+The warning comes from vehicle-to-vehicle (V2V) communication, in which cars broadcast their position and speed, and each message carries a certificate from the Security Credential Management System (SCMS) proving it came from a legitimate vehicle.
 They cannot check whether the warning is accurate, because their vision is blocked.
-This matters because if the other car continued on and they did not brake, they would be hit.
+This matters because if the other car continued on and they did not brake, they would be hit.<!--Context of my argument-->
 If the warning is false, the driver brakes hard for a hazard that was never there, and the car behind may not stop in time.
-The driver cannot tell the two situations apart, which leaves the certificate as the only thing separating a real warning from a fabricated one.
+The driver cannot tell the two situations apart, which leaves the certificate as the only thing separating a real warning from a fabricated one.<!--Problem addressed in my argument-->
 Certificates authenticate the sender of a message but don't say anything about whether its contents are true, and SCMS\'s answer to a misbehaving vehicle, revoking its certificates and distributing them on a revocation list, cannot prevent the first false message it sends.<!--My claim-->
 
 # How V2V Messages Are Trusted
@@ -101,8 +102,8 @@ AUTOCRYPT describes SCMS as maintaining a record of revoked devices that \"helps
 Stopping a vehicle from continuing to broadcast does nothing for the driver who has already acted on the first false message.
 
 Certificates prevent outsiders from injecting messages into the network, but SCMS\'s response to a legitimate vehicle that begins broadcasting false data is entirely reactive, and the first false message reaches drivers before any of it takes effect.
-Revocation is effective at stopping a misbehaving vehicle from sending further harmful messages.
 If SCMS cannot prevent the first false message, the remaining defense lies with the receiving vehicle, which can check incoming messages against its own sensor data and reject those that are not possible.
 @gyawaliMisbehaviorDetectionUsing2019 complicate this defense by describing an attacker who transmits low speed and traffic flow values that are consistent with current traffic conditions, allowing a false alert to pass the receiving vehicle\'s own possibility checks.
+Until receiving vehicles can judge whether a signed message is plausible and not just whether it is authentic, the first false warning will reach the driver, and the question V2V security must answer is how a car can doubt a message it has every cryptographic reason to trust.
 
 # Bibliography
