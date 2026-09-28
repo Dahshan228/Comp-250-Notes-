@@ -26,7 +26,7 @@ They cannot check whether the warning is accurate, because their vision is block
 This matters because if the other car continued on and they did not brake, they would be hit.
 If the warning is false, the driver brakes hard for a hazard that was never there, and the car behind may not stop in time.
 The driver cannot tell the two situations apart, which leaves the certificate as the only thing separating a real warning from a fabricated one.
-[Certificates authenticate the sender of a message but don't say anything about whether its contents are true, and SCMS\'s answer to a misbehaving vehicle, revoking its certificates and distributing them on a revocation list, cannot prevent the first false message it sends.]{.mark}<!--My claim-->
+Certificates authenticate the sender of a message but don't say anything about whether its contents are true, and SCMS\'s answer to a misbehaving vehicle, revoking its certificates and distributing them on a revocation list, cannot prevent the first false message it sends.<!--My claim-->
 
 # How V2V Messages Are Trusted
 
