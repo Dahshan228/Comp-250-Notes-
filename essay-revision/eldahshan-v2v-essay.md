@@ -16,6 +16,8 @@ If the warning is false, the driver brakes hard for a hazard that was never ther
 The driver cannot tell the two situations apart, which leaves the certificate as the only thing separating a real warning from a fabricated one.
 [Certificates authenticate the sender of a message but don't say anything about whether its contents are true, and SCMS\'s answer to a misbehaving vehicle, revoking its certificates and distributing them on a revocation list, cannot prevent the first false message it sends.]{.mark}
 
+# How V2V Messages Are Trusted
+
 A basic safety message (BSM) is broadcast by a vehicle up to ten times per second and contains the sender\'s time, position, speed, and path history (Brecht et al., 2018).
 Each message is digitally signed, and a receiving vehicle verifies that signature before acting on the message, which establishes that the sender is a real and verified participant in the network.
 The signature does not establish whether the contents of the message are true.
@@ -33,6 +35,8 @@ V2X is a general term for vehicle communications, which includes vehicle to vehi
 These systems support driver assistance applications such as forward collision warning and curve speed warning.
 This paper focuses on V2V communication rather than V2X as a whole.
 
+# Certificates and the SCMS
+
 A vehicle first sends a request to join the V2X network, and SCMS approves it and issues an enrollment certificate (AUTOCRYPT, n.d.).
 The vehicle keeps the enrollment certificate onboard as proof that it is authorized, and uses it to request the pseudonym certificates it will attach to its messages.
 A pseudonym certificate lets a receiver verify the signature without revealing which vehicle sent the message.
@@ -46,6 +50,8 @@ AUTOCRYPT describes the pseudonym certificate as encrypted, but this cannot be a
 What the pseudonym certificates provides is anonymity rather than encryption as the certificate is readable by any receiver but does not identify the vehicle that holds it.
 This oversight might be due to the fact that AUTOCRYPT sells V2X security products, so its description of SCMS is promotional material rather than independent analysis.
 
+# How Revocation Works
+
 The problem is that the pseudonym certificates are deliberately unlinkable, so identifying a misbehaving vehicle from one reported certificate is not enough to revoke the rest of the batch it holds.
 Brecht et al. (2018) identify efficient revocation as \"one of the main challenges\" given the number of pseudonym certificates each vehicle holds.
 
@@ -56,6 +62,8 @@ When a vehicle receives a message whose contents are not possible, it reports th
 The Misbehavior Authority does not act on a single report, since one anomaly could be a failing sensor rather than an attack, so it waits until enough reports add up to justify revocation.
 The Misbehavior Authority uses the linkage mechanism to trace the reported pseudonym certificate back to the vehicle and identify every other pseudonym certificate it holds, then adds them all to the certificate revocation list.
 The revocation list is then distributed to vehicles, and each one must receive and load it before it will begin rejecting messages signed with those certificates.
+
+# Why the First Message Gets Through
 
 In a false alert generation attack, a malicious vehicle broadcasts a fabricated warning to its neighbors, such as an emergency brake light or a collision warning, which may disrupt traffic or cause an accident (Gyawali & Qian, 2019).
 In a position falsification attack, the attacker alters the position information in its own broadcast beacons.
@@ -72,6 +80,8 @@ Once enough warnings about a vehicle add up, its ID is added to a local blacklis
 Permanent exclusion requires the local blacklist to reach the certificate authority, and that can only happen when a vehicle carrying the local blacklist comes in range of a roadside unit or base station (Gyawali & Qian, 2019).
 This delay cannot be reduced by better engineering, because it depends on where a driver happens to drive rather than on the speed of the system.
 
+# Conclusion
+
 The driver at the intersection would still receive the false message, because the entire process only begins after that message has been broadcast.
 Revocation does prevent a misbehaving vehicle from continuing to send false messages.
 AUTOCRYPT describes SCMS as maintaining a record of revoked devices that \"helps prevent the same threats from reoccurring\" (AUTOCRYPT, n.d.).
@@ -82,7 +92,7 @@ Revocation is effective at stopping a misbehaving vehicle from sending further h
 If SCMS cannot prevent the first false message, the remaining defense lies with the receiving vehicle, which can check incoming messages against its own sensor data and reject those that are not possible.
 Gyawali and Qian (2019) complicate this defense by describing an attacker who transmits low speed and traffic flow values that are consistent with current traffic conditions, allowing a false alert to pass the receiving vehicle\'s own possibility checks.
 
-**References**
+# Bibliography
 
 **AUTOCRYPT. (n.d.). *What is the security credential management system?* <https://www.autocrypt.io/security-credential-management-system/>**
 
