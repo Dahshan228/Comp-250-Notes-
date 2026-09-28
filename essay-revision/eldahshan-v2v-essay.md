@@ -85,9 +85,10 @@ In a position falsification attack, the attacker alters the position information
 This paper focuses on false alert attacks, but the timing problem applies equally to both.
 In either case, a vehicle can only be added to a blacklist after it has already transmitted a false message, so the first message always reaches its targets.
 
-Every step in this process can be sped up with better engineering except the review step, because the delay there is not a technical limitation but a deliberate one the Misbehavior Authority have to wait for enough reports to accumulate before it can act.
-If the authority revoked on the first report, it could remove a vehicle from the network over a single irregular reading rather than a real pattern of misbehavior.
-The wait is needed to avoid wrongfully revoking a vehicle, however, during that wait the misbehaving vehicle continues to broadcast false messages.
+Better engineering can speed up every step of revocation except the review.
+That step is slow by design, because the Misbehavior Authority must wait for enough reports to accumulate before it acts.
+If it revoked a vehicle on the first report, it could remove that vehicle from the network over a single irregular reading rather than a real pattern of misbehavior.
+The wait protects honest vehicles from wrongful revocation, but while the Authority waits, the misbehaving vehicle continues to broadcast false messages.
 
 Unlike the centralized revocation list used by SCMS, the misbehavior detection system described by @gyawaliMisbehaviorDetectionUsing2019 has a vehicle that detects an attacker broadcast a warning to nearby vehicles, which then add the accused vehicle to an accusation list.
 Once enough warnings about a vehicle add up, its ID is added to a local blacklist and nearby vehicles are instructed to ignore its broadcasts.
