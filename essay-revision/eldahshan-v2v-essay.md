@@ -5,6 +5,17 @@ date: September 11, 2026
 institution: Department of Computer Science, Loyola University Chicago
 course: "COMP-348: Network Security"
 instructor: Dr. Corby Schmitz
+abstract: |
+  Vehicle-to-vehicle (V2V) communication warns drivers of hazards they cannot see,
+  and the Security Credential Management System (SCMS) uses certificates to
+  ensure that each warning comes from a legitimate vehicle.
+  But a certificate authenticates the sender, not the truth of the message, and
+  a legitimate vehicle can still broadcast false data.
+  This paper argues that SCMS's response, revoking the misbehaving vehicle's
+  certificates, cannot prevent the first false message, because revocation begins
+  only after reports accumulate and the list reaches other vehicles.
+  The remaining defense lies with receiving vehicles, which must check messages
+  against their own sensors, though a careful attacker can evade even those checks.
 ---
 
 A driver can see an open road that has buildings blocking their view of the left and right of the intersection.
