@@ -61,7 +61,7 @@ If a vehicle used one permanent certificate, anyone operating receivers along a 
 When a message arrives, the receiving vehicle verifies the attached certificate and checks it against the list of revoked certificates, and accepts the message only if both checks pass [@autocryptWhatSecurityCredential2021].
 
 AUTOCRYPT describes the pseudonym certificate as encrypted, but this cannot be accurate, since a receiving vehicle must be able to read the certificate in order to verify it.
-What the pseudonym certificates provides is anonymity rather than encryption as the certificate is readable by any receiver but does not identify the vehicle that holds it.
+What the pseudonym certificates provide is anonymity rather than encryption as the certificate is readable by any receiver but does not identify the vehicle that holds it.
 This oversight might be due to the fact that AUTOCRYPT sells V2X security products, so its description of SCMS is promotional material rather than independent analysis.
 
 # How Revocation Works
