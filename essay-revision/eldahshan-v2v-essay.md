@@ -6,6 +6,7 @@ institution: Department of Computer Science, Loyola University Chicago
 course: "COMP-348: Network Security"
 instructor: Dr. Corby Schmitz
 bibliography: "Essay Revision- The Limits of Certificate Revocation in Vehicle to Vehicle Communication.json"
+csl: apa.csl
 abstract: |
   Vehicle-to-vehicle (V2V) communication warns drivers of hazards they cannot see,
   and the Security Credential Management System (SCMS) uses certificates to
