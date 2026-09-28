@@ -1,14 +1,11 @@
-**The Limits of Certificate Revocation in Vehicle to Vehicle Communication**
-
-Ali Eldahshan
-
-Department of Computer Science, Loyola University Chicago
-
-COMP-348: Network Security
-
-Dr. Corby Schmitz
-
-September 11, 2026
+---
+title: The Limits of Certificate Revocation in Vehicle to Vehicle Communication
+author: Ali Eldahshan
+date: September 11, 2026
+institution: Department of Computer Science, Loyola University Chicago
+course: "COMP-348: Network Security"
+instructor: Dr. Corby Schmitz
+---
 
 A driver can see an open road that has buildings blocking their view of the left and right of the intersection. They cannot see if a car is coming from either direction. A warning from their vehicle tells them to brake because a car is approaching from the right and is not slowing down. They cannot check whether the warning is accurate, because their vision is blocked. This matters because if the other car continued on and they did not brake, they would be hit. If the warning is false, the driver brakes hard for a hazard that was never there, and the car behind may not stop in time. The driver cannot tell the two situations apart, which leaves the certificate as the only thing separating a real warning from a fabricated one. [Certificates authenticate the sender of a message but don't say anything about whether its contents are true, and SCMS\'s answer to a misbehaving vehicle, revoking its certificates and distributing them on a revocation list, cannot prevent the first false message it sends.]{.mark}
 
